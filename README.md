@@ -7,6 +7,7 @@ Template para pacote/script bash
 
 ## Estrutura
 
+```
 .
 ├── assets
 │   └── logo.png
@@ -21,6 +22,7 @@ Template para pacote/script bash
 ├── README.md
 ├── script.bash
 └── VERSION.md
+```
 
 ## Instalação
 
