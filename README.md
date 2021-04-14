@@ -31,6 +31,8 @@ Template para pacote/script bash
 3. Executa na raiz do script `source novoscript`
 4. novoscript -v
 
+## Exemplo
+
 ```bash
 git clone https://github.com/marcelosenabr/bashtemplate.git novoscript && cd novoscript
 mv bashtemplate novoscript
