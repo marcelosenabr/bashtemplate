@@ -1,0 +1,23 @@
+path_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
+script_path() {
+    addpath=${1%/}
+    if [ -d "$1" ] && ! echo "$PATH" | grep -E -q "(^|:)$addpath($|:)"; then
+        if [ "$2" = "after" ]; then
+            export PATH="$PATH:$addpath"
+        else
+            export PATH="$addpath:$PATH"
+        fi
+    fi
+}
+script_path "$path_dir/bin"
+
+# Iniciar script
+if ! type "$(basename "${BASH_SOURCE[0]}")" &>/dev/null; then
+	mkdir -p "$path_dir/bin"
+    ln -s "$path_dir/$(basename "${BASH_SOURCE[0]}").sh" "$path_dir/bin/$(basename "${BASH_SOURCE[0]}")"
+    echo "
+if [ -f "$path_dir/$(basename "${BASH_SOURCE[0]}")" ]; then
+    source "$path_dir/$(basename "${BASH_SOURCE[0]}")"
+fi
+" >> "$HOME/.bashrc"
+fi
