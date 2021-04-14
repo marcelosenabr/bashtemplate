@@ -26,12 +26,18 @@ Template para pacote/script bash
 
 ## Instalação
 
-1. Extraia os arquivos no diretório com o nome do novo script
+1. git clone https://github.com/marcelosenabr/bashtemplate.git novoscript && cd novoscript
 2. Altere o nome dos arquivos `bashtemplate` e `bashtemplate.sh` com o nome do novo script
-3. Executa na raiz do script `source novopacote`
+3. Executa na raiz do script `source novoscript`
+4. novoscript -v
 
 ```bash
-source novopacote
+git clone https://github.com/marcelosenabr/bashtemplate.git novoscript && cd novoscript
+mv bashtemplate novoscript
+mv bashtemplate.sh novoscript.sh
+source novoscript
+source ~/.bashrc
+novoscript -v
 ```
 
 ## Licença
